@@ -1,0 +1,12 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+.env.*
+data/
+outputs/
+*.csv
+*.xlsx
+*.zip
+*.hdf5
+*.keras

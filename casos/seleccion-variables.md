@@ -1,0 +1,11 @@
+# Selección de variables: redundancia y comparación de métodos
+
+**Fuente de trabajo:** `05/UL05-Feature_selection.ipynb`, bitácora asignada a Keber en `Planificación Grupal.xlsx` (`modulo 5!E6`). Los experimentos registrados en esa fila incluyen análisis de multicolinealidad y comparación de métodos *wrapper*.
+
+El notebook combina una exploración de redundancia entre medidas de Iris con comparaciones de selección de variables sobre Breast Cancer. Keber calculó correlaciones y VIF, probó qué ocurría al retirar variables de Iris y comparó selección exhaustiva, secuencial hacia adelante y hacia atrás con regresión logística y Gaussian Naive Bayes. También ensayó selección integrada en Random Forest, SVM lineal y regresión logística con penalización L1.
+
+Lo destacable para el portafolio es la pregunta experimental: **¿cuánto puede reducirse el conjunto de variables sin perder capacidad de clasificación?** El trabajo conserva resultados y discusión, y permite explicar que un método de selección depende del modelo y del criterio de evaluación. Aunque la bitácora pertenece al módulo de aprendizaje no supervisado, varias técnicas usadas aquí requieren etiquetas y son métodos de selección **supervisados**; PCA del [caso de departamentos](precios-departamentos.md) aporta el componente de reducción no supervisada.
+
+Hay un límite importante. En la actividad de métodos de filtrado sobre Breast Cancer, `SelectKBest` y otros selectores supervisados se ajustaron con todos los datos **antes** de separar entrenamiento y prueba. Esa comparación puede estar favorecida por fuga de información y sus cifras de exactitud no se publican como rendimiento válido. En el experimento posterior de métodos *wrapper*, la función `evaluate_wrapper_method` separa entrenamiento y prueba antes de ajustar el selector. El [extracto de código](../notebooks/seleccion_variables_curado.ipynb) privilegia esa comparación y los análisis de redundancia; no contiene salidas ni datos.
+
+Este es un caso de método sobre conjuntos de datos didácticos. No implica una aplicación clínica ni una validación externa de las características elegidas. Para convertirlo en una comparación publicable de métricas haría falta rehacer el filtrado dentro de cada partición de entrenamiento y fijar un protocolo común para todos los modelos.

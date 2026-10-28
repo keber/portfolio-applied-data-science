@@ -1,0 +1,9 @@
+# Pruebas A/B: sensibilidad del análisis de conversión
+
+**Fuente de trabajo:** `04/IE12_2_Pruebas_A_B.ipynb`, bitácora asignada a Keber (`modulo 4!E13`); la planificación registra además un experimento de intervalo de confianza mediante el método Wald (`K13`).
+
+El ejercicio compara conversiones entre anuncios comerciales y mensajes informativos. Keber examinó cómo cambia la tasa al separar usuarios con mucha exposición, calculó un intervalo para la diferencia de proporciones, repitió la prueba tras submuestrear el grupo más grande y desarrolló un escenario sintético de campaña para CORFO. El valor del caso está en mostrar que una conclusión A/B depende de la población que se analiza, del tamaño de los grupos y del intervalo de incertidumbre, además del valor p.
+
+La fuente requiere una lectura crítica antes de citar resultados como una recomendación comercial. El número de anuncios vistos puede estar afectado por la propia experiencia del usuario; excluir a quienes vieron muchos anuncios cambia la población analizada y puede sesgar la comparación. Un grupo 24 veces mayor que el otro tampoco causa sesgo por sí solo: el submuestreo descarta observaciones y normalmente reduce precisión. La bitácora contiene afirmaciones más fuertes sobre ambos puntos, por lo que esta ficha los plantea como decisiones por revisar. El ejercicio CORFO usa datos **simulados** y no describe una campaña real.
+
+El archivo `marketing_AB.csv` utilizado en el notebook original no está en esta carpeta. El [extracto de código](../notebooks/pruebas_ab_curado.ipynb) conserva las celdas de análisis sin salidas; depende de las celdas anteriores de carga y preparación. Se presenta como evidencia de trabajo analítico y de revisión metodológica, no como una demostración reproducible ni como una estimación causal ya validada.
